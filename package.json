@@ -5,5 +5,16 @@
     "inquirer": "^3.3.0",
     "ip-subnet-calculator": "^1.1.8",
     "node-emoji": "^1.8.1"
-  }
+  },
+  "scripts": {
+    "start": "node index.js",
+    "build": "node node_modules/geoip-lite/scripts/updatedb.js"
+  },
+  "name": "IP-Similarity",
+  "version": "0.0.1",
+  "description": "Display IP Similarities",
+  "main": "index.js",
+  "repository": "https://github.com/RumbleFrog/IP-Similarity.git",
+  "author": "RumbleFrog <xxlosttechxx@gmail.com>",
+  "license": "MIT"
 }
