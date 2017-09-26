@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "cli-table2": "^0.2.0",
+    "geoip-lite": "^1.2.1",
+    "ip-subnet-calculator": "^1.1.8",
+    "node-emoji": "^1.8.1"
+  }
+}
