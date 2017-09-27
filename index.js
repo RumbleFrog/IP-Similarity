@@ -13,11 +13,15 @@ Inquirer.prompt([{type:'input',name:'ips',message:'Enter IPs: '}]).then((answers
 
   let table = new Table({head: IPs});
 
-  let sHostname, bVPN, sCountry, sRegion, sCity, iZip = [];
+  let sHostname = [], bVPN = [], sCountry = [], sRegion = [], sCity = [], iZip = [];
 
   IPs.forEach((ip) => {
-    DNS.resolveNs(ip, (err, addresses) => {
-      sHostname.push(addresses[0]);
+    DNS.reverse(ip, (err, hostnames) => {
+
+      if (err) return;
+
+      sHostname.push(hostnames[0]);
+
       bVPN.push(new Similarities.CIDR(ip).isVPN());
 
       let geo = GeoIP.lookup(ip);
