@@ -9,7 +9,8 @@
   },
   "scripts": {
     "start": "node index.js",
-    "updatedb": "node node_modules/geoip-lite/scripts/updatedb.js"
+    "updatedb": "node node_modules/geoip-lite/scripts/updatedb.js",
+    "updatecidr": "node scripts/updateCIDR.js"
   },
   "name": "IP-Similarity",
   "version": "0.0.1",

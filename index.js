@@ -19,9 +19,6 @@ Inquirer.prompt([{type:'input',name:'ips',message:'Enter IPs: '}]).then((answers
 
   IPs.forEach((ip) => {
     DNS.reverse(ip, (err, hostnames) => {
-
-      i++;
-
       if (err) return;
 
       sHostname.push(hostnames[0]);
@@ -47,5 +44,6 @@ Inquirer.prompt([{type:'input',name:'ips',message:'Enter IPs: '}]).then((answers
         console.log(table.toString());
       }
     });
+    i++;
   });
 });
