@@ -20,6 +20,8 @@ Inquirer.prompt([{type:'input',name:'ips',message:'Enter IPs: '}]).then((answers
   IPs.forEach((ip) => {
     DNS.reverse(ip, (err, hostnames) => {
 
+      i++;
+
       if (err) return;
 
       sHostname.push(hostnames[0]);
@@ -33,7 +35,7 @@ Inquirer.prompt([{type:'input',name:'ips',message:'Enter IPs: '}]).then((answers
       sCity.push(geo.city);
       iZip.push(geo.zip);
 
-      if (i >= IPs.length) {
+      if (i > IPs.length) {
         table.push(
           {'Hostname': sHostname},
           {'Is VPN': bVPN},
@@ -43,9 +45,7 @@ Inquirer.prompt([{type:'input',name:'ips',message:'Enter IPs: '}]).then((answers
           {'Zip Code': iZip}
         );
         console.log(table.toString());
-      } else i++;
-
-
+      }
     });
   });
 });
